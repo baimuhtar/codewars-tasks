@@ -8,6 +8,8 @@ public class Kyu8 {
         System.out.println(zeroFuel(100, 25, 4));
         System.out.println(greet("Mike", "Jhon"));
         System.out.println(smash("1", "4", "5"));
+        double [] numbers = new double[]{1,2,3};
+        System.out.println(sum(numbers));
     }
 
     /* Complete the solution so that it reverses the string passed into it.
@@ -58,5 +60,15 @@ public class Kyu8 {
         }
         eachWord = eachWord.trim();
         return eachWord;
+    }
+
+    /* Write a function that takes an array of numbers and returns the sum of the numbers.
+    The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0. */
+    public static double sum(double[] numbers) {
+        double sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+        return sum;
     }
 }
