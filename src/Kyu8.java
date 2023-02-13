@@ -3,6 +3,7 @@ public class Kyu8 {
         System.out.println(solution("world"));
         System.out.println(oppositeNumber(5));
         System.out.println(dnaToRna("GCAT"));
+        System.out.println(zeroFuel(100, 25,4));
     }
 
     /* Complete the solution so that it reverses the string passed into it.
@@ -31,5 +32,14 @@ public class Kyu8 {
     public static String dnaToRna(String dna) {
         return dna.replace('U', 'T');
     }
+    public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+        return mpg * fuelLeft >= distanceToPump;
+    }
+
+   /* Create a function that gives a personalized greeting. This function takes two parameters: name and owner. */
+   static String greet(String name, String owner) {
+       if (name.equals(owner)) return "Hello boss";
+       else return "Hello guest";
+   }
 
 }
