@@ -11,6 +11,7 @@ public class Kyu8 {
         System.out.println(sum(new double[]{1, 2, 3}));
         System.out.println(even_or_odd(4));
         System.out.println(updateLight("green"));
+        System.out.println(convert(true));
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -87,5 +88,11 @@ public class Kyu8 {
         else if (current.equals("yellow")) return "red";
         else if (current.equals("red")) return "green";
         return current;
+    }
+
+    /* 10. Implement a function which convert the given boolean value into its string representation. */
+    public static String convert(boolean b) {
+        if (b) return "true";
+        else return "false";
     }
 }
