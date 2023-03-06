@@ -2,16 +2,18 @@ import java.util.Arrays;
 
 public class Kyu8 {
     public static void main(String[] args) {
-        System.out.println(solution("world"));
-        System.out.println(oppositeNumber(5));
-        System.out.println(dnaToRna("GCAT"));
-        System.out.println(zeroFuel(100, 25, 4));
-        System.out.println(greet("Mike", "Jhon"));
-        System.out.println(smash("1", "4", "5"));
-        System.out.println(sum(new double[]{1, 2, 3}));
-        System.out.println(even_or_odd(4));
-        System.out.println(updateLight("green"));
-        System.out.println(convert(true));
+
+        System.out.println(solution("world")); //1.
+        System.out.println(oppositeNumber(5)); //2.
+        System.out.println(dnaToRna("GCAT")); //3.
+        System.out.println(zeroFuel(100, 25, 4)); //4.
+        System.out.println(greet("Mike", "Jhon")); //5.
+        System.out.println(smash("1", "4", "5")); //6.
+        System.out.println(sum(new double[]{1, 2, 3})); //7.
+        System.out.println(even_or_odd(4)); //8.
+        System.out.println(updateLight("green")); //9.
+        System.out.println(convert(true)); //10.
+        System.out.println(numberToString(56)); //11.
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -95,4 +97,10 @@ public class Kyu8 {
         if (b) return "true";
         else return "false";
     }
+
+   /* 11. Convert a Number to a String!*/
+    public static String numberToString(int num) {
+        return Integer.toString(num);
+    }
+    
 }
