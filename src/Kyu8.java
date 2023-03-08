@@ -16,13 +16,17 @@ public class Kyu8 {
         System.out.println(convert(true)); //10.
         System.out.println(numberToString(56)); //11.
         System.out.println(paperWork(5, 6)); // 12
-        System.out.println(remove("astana"));
-        System.out.println(getVolumeOfCuboid(3, 2, 1));
-        System.out.println(Arrays.toString(stringToArray("sss ddd")));
+        System.out.println(remove("astana")); //13
+        System.out.println(getVolumeOfCuboid(3, 2, 1)); //14
+        System.out.println(Arrays.toString(stringToArray("Manager Driver")));
+        System.out.println(opposite(-3));
+        System.out.println(fakeBin("1234567"));
+        System.out.println(isEven(5.0));
+        System.out.println(shortcut("hello"));
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
-             'world' => 'dlrow'           'word' => 'drow'          */
+             'world' => 'dlrow'           'word' => 'drow'        */
     public static String solution(String str) {
         String reverseWord = "";
         for (int i = str.length() - 1; i >= 0; i--) {
@@ -139,16 +143,29 @@ public class Kyu8 {
         return -number;
     }
 
-   /* 17. Given a string of digits, you should replace any digit below 5 with '0'
-    and any digit 5 and above with '1'. Return the resulting string.*/
-   public static String fakeBin(String numberString) {
-      return numberString.replaceAll("[0-4], 0", "[5-9], 1");
-   }
+    /* 17. Given a string of digits, you should replace any digit below 5 with '0'
+     and any digit 5 and above with '1'. Return the resulting string.*/
+    public static String fakeBin(String numberString) {
+        return numberString.replaceAll("[0-4], 0", "[5-9], 1");
+    }
 
-   /* 18. Your code will determine if the number passed is even (or not).
-    The function needs to return either a true or false.
-    Numbers may be positive or negative, integers or floats.*/
-    public boolean isEven(double n) {
+    /* 18. Your code will determine if the number passed is even (or not).
+     The function needs to return either a true or false.
+     Numbers may be positive or negative, integers or floats.*/
+    public static boolean isEven(double n) {
         return n % 2 == 0;
+    }
+
+    /* 19. Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.*/
+    public static String shortcut(String input) {
+        String[] wordsToRemove = new String[]{"a", "e", "i", "o", "u"};
+
+
+        for (int j = 0; j < wordsToRemove.length; j++) {
+            if (input.contains(wordsToRemove[j])) {
+                input = input.replace(wordsToRemove[j], "");
+            }
+        }
+        return input;
     }
 }
