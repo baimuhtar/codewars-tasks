@@ -139,4 +139,16 @@ public class Kyu8 {
         return -number;
     }
 
+   /* 17. Given a string of digits, you should replace any digit below 5 with '0'
+    and any digit 5 and above with '1'. Return the resulting string.*/
+   public static String fakeBin(String numberString) {
+      return numberString.replaceAll("[0-4], 0", "[5-9], 1");
+   }
+
+   /* 18. Your code will determine if the number passed is even (or not).
+    The function needs to return either a true or false.
+    Numbers may be positive or negative, integers or floats.*/
+    public boolean isEven(double n) {
+        return n % 2 == 0;
+    }
 }
