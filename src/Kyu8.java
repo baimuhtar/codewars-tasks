@@ -4,26 +4,26 @@ import java.util.Arrays;
 public class Kyu8 {
     public static void main(String[] args) {
 
-        System.out.println(solution("world")); //1.
-        System.out.println(oppositeNumber(5)); //2.
-        System.out.println(dnaToRna("GCAT")); //3.
-        System.out.println(zeroFuel(100, 25, 4)); //4.
-        System.out.println(greet("Mike", "Jhon")); //5.
-        System.out.println(smash("1", "4", "5")); //6.
-        System.out.println(sum(new double[]{1, 2, 3})); //7.
-        System.out.println(even_or_odd(4)); //8.
-        System.out.println(updateLight("green")); //9.
-        System.out.println(convert(true)); //10.
-        System.out.println(numberToString(56)); //11.
+        System.out.println(solution("world")); // 1
+        System.out.println(oppositeNumber(5)); // 2
+        System.out.println(dnaToRna("GCAT")); // 3
+        System.out.println(zeroFuel(100, 25, 4)); // 4
+        System.out.println(greet("Mike", "Jhon")); // 5
+        System.out.println(smash("1", "4", "5")); // 6
+        System.out.println(sum(new double[]{1, 2, 3})); // 7
+        System.out.println(even_or_odd(4)); // 8
+        System.out.println(updateLight("green")); // 9
+        System.out.println(convert(true)); // 10
+        System.out.println(numberToString(56)); // 11
         System.out.println(paperWork(5, 6)); // 12
-        System.out.println(remove("astana")); //13
-        System.out.println(getVolumeOfCuboid(3, 2, 1)); //14
-        System.out.println(Arrays.toString(stringToArray("Manager Driver")));
-        System.out.println(opposite(-3));
-        System.out.println(fakeBin("1234567"));
-        System.out.println(isEven(5.0));
-        System.out.println(shortcut("hello"));
-        System.out.println(quarterOf(13));
+        System.out.println(remove("astana")); // 13
+        System.out.println(getVolumeOfCuboid(3, 2, 1)); // 14
+        System.out.println(Arrays.toString(stringToArray("Manager Driver"))); // 15
+        System.out.println(opposite(-3)); // 16
+        System.out.println(fakeBin("1234567")); // 17
+        System.out.println(isEven(5.0)); // 18
+        System.out.println(shortcut("hello")); // 19
+        System.out.println(quarterOf(13)); // 20
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -171,14 +171,6 @@ public class Kyu8 {
     For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter;
     and month 11 (November), is part of the fourth quarter.*/
     public static int quarterOf(int month) {
-        if (month >= 1 && month <= 3) {
-            return 1;
-        } else if (month >= 4 && month <= 6) {
-            return 2;
-        } else if (month >= 7 && month <= 9) {
-            return 3;
-        } else if (month >= 10 && month <= 12) {
-            return 4;
-        } else return 0;
+        return (month + 2) / 3;
     }
 }
