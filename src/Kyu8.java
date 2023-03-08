@@ -1,3 +1,4 @@
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.Arrays;
 
 public class Kyu8 {
@@ -14,6 +15,10 @@ public class Kyu8 {
         System.out.println(updateLight("green")); //9.
         System.out.println(convert(true)); //10.
         System.out.println(numberToString(56)); //11.
+        System.out.println(paperWork(5, 6)); // 12
+        System.out.println(remove("astana"));
+        System.out.println(getVolumeOfCuboid(3, 2, 1));
+        System.out.println(Arrays.toString(stringToArray("sss ddd")));
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -98,9 +103,40 @@ public class Kyu8 {
         else return "false";
     }
 
-   /* 11. Convert a Number to a String!*/
+    /* 11. Convert a Number to a String!*/
     public static String numberToString(int num) {
         return Integer.toString(num);
     }
-    
+
+    /* 12. Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+     Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0. */
+    public static int paperWork(int n, int m) {
+        if (n >= 0 && m >= 0) {
+            return n * m;
+        } else return 0;
+    }
+
+    /* 13. It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string.
+    You're given one parameter, the original string. You don't have to worry with strings with less than two characters.*/
+    public static String remove(String str) {
+        return str.substring(1, str.length() - 1);
+    }
+
+    /* 14. Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and height of the cuboid.
+    Write a function to help Bob with this calculation.*/
+    public static double getVolumeOfCuboid(final double length, final double width, final double height) {
+        return length * width * height;
+    }
+
+    /* 15. Write a function to split a string and convert it into an array of words.*/
+    public static String[] stringToArray(String s) {
+        return s.split(" ");
+
+    }
+
+    /* 16. Very simple, given an integer or a floating-point number, find its opposite.*/
+    public static int opposite(int number) {
+        return -number;
+    }
+
 }
