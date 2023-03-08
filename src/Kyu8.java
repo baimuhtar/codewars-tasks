@@ -1,5 +1,7 @@
 import java.awt.image.AreaAveragingScaleFilter;
 import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Kyu8 {
     public static void main(String[] args) {
@@ -24,6 +26,7 @@ public class Kyu8 {
         System.out.println(isEven(5.0)); // 18
         System.out.println(shortcut("hello")); // 19
         System.out.println(quarterOf(13)); // 20
+        System.out.println(repeatStr(3, "Hello")); // 21
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -167,10 +170,21 @@ public class Kyu8 {
         }
         return input;
     }
+
     /* 20. Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
     For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter;
     and month 11 (November), is part of the fourth quarter.*/
     public static int quarterOf(int month) {
         return (month + 2) / 3;
+    }
+
+    /* 21. Write a function that accepts an integer n and a string s as parameters,
+    and returns a string of s repeated exactly n times.*/
+    public static String repeatStr(final int repeat, final String string) {
+        String word = "";
+        for (int i = 0; i < repeat; i++) {
+            word += string;
+        }
+        return word;
     }
 }
