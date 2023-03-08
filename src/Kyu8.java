@@ -23,6 +23,7 @@ public class Kyu8 {
         System.out.println(fakeBin("1234567"));
         System.out.println(isEven(5.0));
         System.out.println(shortcut("hello"));
+        System.out.println(quarterOf(13));
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -159,13 +160,25 @@ public class Kyu8 {
     /* 19. Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.*/
     public static String shortcut(String input) {
         String[] wordsToRemove = new String[]{"a", "e", "i", "o", "u"};
-
-
         for (int j = 0; j < wordsToRemove.length; j++) {
             if (input.contains(wordsToRemove[j])) {
                 input = input.replace(wordsToRemove[j], "");
             }
         }
         return input;
+    }
+    /* 20. Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+    For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter;
+    and month 11 (November), is part of the fourth quarter.*/
+    public static int quarterOf(int month) {
+        if (month >= 1 && month <= 3) {
+            return 1;
+        } else if (month >= 4 && month <= 6) {
+            return 2;
+        } else if (month >= 7 && month <= 9) {
+            return 3;
+        } else if (month >= 10 && month <= 12) {
+            return 4;
+        } else return 0;
     }
 }
