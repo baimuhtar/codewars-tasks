@@ -28,12 +28,13 @@ public class Kyu8 {
         System.out.println(shortcut("hello")); // 19
         System.out.println(quarterOf(13)); // 20
         System.out.println(repeatStr(3, "Hello")); // 21
-        System.out.println(countSheeps(new Boolean[]{true,  true,  true,  false,
-                true,  true,  true,  true ,
-                true,  false, true,  false,
-                true,  false, false, true ,
-                true,  true,  true,  true ,
-                false, false, true,  true}));
+        System.out.println(countSheeps(new Boolean[]{true, true, true, false,
+                true, true, true, true,
+                true, false, true, false,
+                true, false, false, true,
+                true, true, true, true,
+                false, false, true, true}));
+        System.out.println(strCount("Hello", 'z'));
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -194,12 +195,25 @@ public class Kyu8 {
         }
         return word;
     }
+
     /* 22. Consider an array/list of sheep where some sheep may be missing from their place. We need a function
     that counts the number of sheep present in the array (true means present).*/
     public static int countSheeps(Boolean[] arrayOfSheeps) {
         int count = 0;
         for (int i = 0; i < arrayOfSheeps.length; i++) {
             if (arrayOfSheeps[i] != null && arrayOfSheeps[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+    /* 23. Create a function that accepts a string and a single character,
+     and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+    If no occurrences can be found, a count of 0 should be returned.*/
+    public static int strCount(String str, char letter) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == letter) {
                 count++;
             }
         }
