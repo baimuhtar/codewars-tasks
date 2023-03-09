@@ -2,6 +2,7 @@ import java.awt.image.AreaAveragingScaleFilter;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.stream.Stream;
 
 public class Kyu8 {
     public static void main(String[] args) {
@@ -27,6 +28,12 @@ public class Kyu8 {
         System.out.println(shortcut("hello")); // 19
         System.out.println(quarterOf(13)); // 20
         System.out.println(repeatStr(3, "Hello")); // 21
+        System.out.println(countSheeps(new Boolean[]{true,  true,  true,  false,
+                true,  true,  true,  true ,
+                true,  false, true,  false,
+                true,  false, false, true ,
+                true,  true,  true,  true ,
+                false, false, true,  true}));
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -186,5 +193,16 @@ public class Kyu8 {
             word += string;
         }
         return word;
+    }
+    /* 22. Consider an array/list of sheep where some sheep may be missing from their place. We need a function
+    that counts the number of sheep present in the array (true means present).*/
+    public static int countSheeps(Boolean[] arrayOfSheeps) {
+        int count = 0;
+        for (int i = 0; i < arrayOfSheeps.length; i++) {
+            if (arrayOfSheeps[i] != null && arrayOfSheeps[i]) {
+                count++;
+            }
+        }
+        return count;
     }
 }
