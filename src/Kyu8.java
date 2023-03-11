@@ -28,13 +28,9 @@ public class Kyu8 {
         System.out.println(shortcut("hello")); // 19
         System.out.println(quarterOf(13)); // 20
         System.out.println(repeatStr(3, "Hello")); // 21
-        System.out.println(countSheeps(new Boolean[]{true, true, true, false,
-                true, true, true, true,
-                true, false, true, false,
-                true, false, false, true,
-                true, true, true, true,
-                false, false, true, true}));
-        System.out.println(strCount("Hello", 'z'));
+        System.out.println(countSheeps(new Boolean[]{true, true, true, false})); // 22
+        System.out.println(strCount("Hello", 'l')); // 23
+        System.out.println(squareSum(new int[] {1,1,1})); // 24
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -207,6 +203,7 @@ public class Kyu8 {
         }
         return count;
     }
+
     /* 23. Create a function that accepts a string and a single character,
      and returns an integer of the count of occurrences the 2nd argument is found in the first one.
     If no occurrences can be found, a count of 0 should be returned.*/
@@ -218,5 +215,15 @@ public class Kyu8 {
             }
         }
         return count;
+    }
+    /* 24. Complete the square sum function so that it squares each number passed into it
+    and then sums the results together. */
+    public static int squareSum(int[] n) {
+        int sum = 0;
+        for (int i = 0; i < n.length; i++) {
+            sum += (n[i] *n[i]);
+            System.out.println(sum);
+        }
+        return sum;
     }
 }
