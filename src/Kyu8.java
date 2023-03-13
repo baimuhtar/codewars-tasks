@@ -30,7 +30,10 @@ public class Kyu8 {
         System.out.println(repeatStr(3, "Hello")); // 21
         System.out.println(countSheeps(new Boolean[]{true, true, true, false})); // 22
         System.out.println(strCount("Hello", 'l')); // 23
-        System.out.println(squareSum(new int[] {1,1,1})); // 24
+        System.out.println(squareSum(new int[]{1, 1, 1})); // 24
+        System.out.println("Min: " + min(new int[]{-52, 56, 30, 29, -54, 0, -110}));
+        System.out.println("Max: " + max(new int[]{-52, 56, 30, 29, -54, 0, -110}));
+        System.out.println(countingSheep(3));
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -216,14 +219,47 @@ public class Kyu8 {
         }
         return count;
     }
+
     /* 24. Complete the square sum function so that it squares each number passed into it
     and then sums the results together. */
     public static int squareSum(int[] n) {
         int sum = 0;
         for (int i = 0; i < n.length; i++) {
-            sum += (n[i] *n[i]);
+            sum += (n[i] * n[i]);
             System.out.println(sum);
         }
         return sum;
     }
+
+    public static int min(int[] list) {
+        int min = list[0];
+        for (int i = 0; i < list.length; i++) {
+            if (min >= list[i]) {
+                min = list[i];
+            }
+        }
+        return min;
+    }
+
+    public static int max(int[] list) {
+        int max = list[0];
+        for (int i = 0; i < list.length; i++) {
+            if (max <= list[i]) {
+                max = list[i];
+            }
+        }
+        return max;
+    }
+
+    /*Given a non-negative integer, 3 for example, return a string with a murmur:
+            "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e.no negative integers.*/
+    public static String countingSheep(int num) {
+        String sheep = "";
+
+        for (int i = 1; i <= num; i++) {
+            sheep += i + " sheep...";
+        }
+        return sheep;
+    }
+
 }
