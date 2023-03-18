@@ -1,5 +1,6 @@
 import java.awt.image.AreaAveragingScaleFilter;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.stream.Stream;
@@ -31,9 +32,11 @@ public class Kyu8 {
         System.out.println(countSheeps(new Boolean[]{true, true, true, false})); // 22
         System.out.println(strCount("Hello", 'l')); // 23
         System.out.println(squareSum(new int[]{1, 1, 1})); // 24
-        System.out.println("Min: " + min(new int[]{-52, 56, 30, 29, -54, 0, -110}));
-        System.out.println("Max: " + max(new int[]{-52, 56, 30, 29, -54, 0, -110}));
+//        System.out.println("Min: " + min(new int[]{-52, 56, 30, 29, -54, 0, -110}));
+//        System.out.println("Max: " + max(new int[]{-52, 56, 30, 29, -54, 0, -110}));
         System.out.println(countingSheep(3));
+        System.out.println(getStatus(true));
+        System.out.println(Arrays.toString(countPositivesSumNegatives(new int[]{0, 0, 0, 0,0, 0, 0, 0, 0, 0, -11, -12, -13, -14})));
     }
 
     /* 1. Complete the solution so that it reverses the string passed into it.
@@ -231,27 +234,7 @@ public class Kyu8 {
         return sum;
     }
 
-    public static int min(int[] list) {
-        int min = list[0];
-        for (int i = 0; i < list.length; i++) {
-            if (min >= list[i]) {
-                min = list[i];
-            }
-        }
-        return min;
-    }
-
-    public static int max(int[] list) {
-        int max = list[0];
-        for (int i = 0; i < list.length; i++) {
-            if (max <= list[i]) {
-                max = list[i];
-            }
-        }
-        return max;
-    }
-
-    /*Given a non-negative integer, 3 for example, return a string with a murmur:
+    /* 25. Given a non-negative integer, 3 for example, return a string with a murmur:
             "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e.no negative integers.*/
     public static String countingSheep(int num) {
         String sheep = "";
@@ -262,4 +245,36 @@ public class Kyu8 {
         return sheep;
     }
 
+   /* 26. Function should return a dictionary/Object/Hash with "status" as a key, whose value can : "busy" or "available"
+    depending on the truth value of the argument is_busy. */
+    public static HashMap<String, String> getStatus(boolean isBusy) {
+        HashMap<String, String> status = new HashMap<>();
+
+        if (isBusy) {
+            status.put("status", "busy");
+        } else {
+            status.put("status", "available");
+        }
+
+        return status;
+    }
+    /* 27. Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers.
+    0 is neither positive nor negative. If the input is an empty array or is null, return an empty array.*/
+    public static int[] countPositivesSumNegatives(int[] input) {
+
+        if (input == null || input.length == 0)
+            return new int[]{};
+
+        int countPositive = 0;
+        int negativeSum = 0;
+
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] > 0) {
+                countPositive++;
+            } else if (input[i] < 0) {
+                negativeSum += input[i];
+            }
+        }
+        return new int[]{countPositive, negativeSum};
+    }
 }
